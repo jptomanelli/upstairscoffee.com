@@ -1,5 +1,19 @@
 body {
- font-family: Helvetica;
-  margin: 0 auto;
-  background: rgba(245, 245, 245, 1);
+    font-family: Helvetica;
+    margin: 0 auto;
+    background: rgba(245, 245, 245, 1);
+}
+
+.cursor {
+  
+}
+
+@keyframes blink {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: rgba(221, 176, 61, 1);
+    }
 }
