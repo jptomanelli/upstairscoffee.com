@@ -1,13 +1,10 @@
-exports.handler = function(event, context, callback) {
+exports.handler = async function(event, _, callback) {
     
-    console.log(event.methodEvent);
-
     if (event.methodEvent !== 'POST') {
         return;
     }
 
     const body = JSON.parse(event.body);
-    console.log(body);
 
     const {
         MAILCHIMP_MEMBERS_ENDPOINT: membersEndpoint,
