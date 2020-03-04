@@ -1,7 +1,11 @@
+import fetch from 'isomorphic-unfetch';
+
 exports.handler = async function(event, _, callback) {
     
     if (event.methodEvent !== 'POST') {
-        return;
+        return callback({
+            error: `${event.methodEvent} not supported`
+        });
     }
 
     const body = JSON.parse(event.body);
@@ -24,8 +28,8 @@ exports.handler = async function(event, _, callback) {
           })
         });
         const data = await response.json();
-        callback({ status: data.subscribed  });
-      } catch (err) {
-        callback(err);
+        callback({ error: null, status: data.subscribed  });
+      } catch (error) {
+        callback({ error });
       }
 }
