@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-unfetch';
+const fetch = require('isomorphic-unfetch');
 
 exports.handler = async function(event, _, callback) {
     
