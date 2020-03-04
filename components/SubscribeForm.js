@@ -8,7 +8,7 @@ const SubscribeForm = ({ hidden }) => {
       e.preventDefault();
       return;
     }
-    fetch("/api/email", {
+    fetch(".netlify/functions/signup", {
       method: "POST",
       body: JSON.stringify({
         email: e.target.EMAIL.value
@@ -28,7 +28,7 @@ const SubscribeForm = ({ hidden }) => {
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
             className="validate"
-            target="/api/email"
+            target=".netlify/functions/signup"
             noValidate
           >
             <div id="mc_embed_signup_scroll">
